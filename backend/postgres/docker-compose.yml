@@ -1,0 +1,17 @@
+version: "2.2"
+
+services:
+  postgres-comexStockInventory:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=f_ship
+      - POSTGRES_USER=f_ship
+      - POSTGRES_DB=comexStockInventory
+    volumes:
+      - postgres-data:/var/lib/postgresql/comexStockInventory
+
+volumes:
+  postgres-data:
+    driver: local

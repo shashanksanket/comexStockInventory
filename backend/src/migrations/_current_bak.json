@@ -1,0 +1,211 @@
+{
+    "tables": {
+        "op_stocks": {
+            "tableName": "op_stocks",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "Title": {
+                    "allowNull": true,
+                    "field": "Title",
+                    "seqType": "Sequelize.STRING"
+                },
+                "amountSpent": {
+                    "allowNull": true,
+                    "field": "amountSpent",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "DateOfPayment": {
+                    "allowNull": true,
+                    "field": "DateOfPayment",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "userId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "userId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "opconfigs": {
+            "tableName": "opconfigs",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "Name": {
+                    "allowNull": true,
+                    "field": "Name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "totalAmountGiven": {
+                    "allowNull": true,
+                    "field": "totalAmountGiven",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "totalAmountLeft": {
+                    "allowNull": true,
+                    "field": "totalAmountLeft",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "lastUpdateAt": {
+                    "allowNull": true,
+                    "field": "lastUpdateAt",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "userId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "userId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "oppaymentdetails": {
+            "tableName": "oppaymentdetails",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "paymentAmount": {
+                    "allowNull": true,
+                    "field": "paymentAmount",
+                    "seqType": "Sequelize.STRING"
+                },
+                "paymentDate": {
+                    "allowNull": true,
+                    "field": "paymentDate",
+                    "seqType": "Sequelize.STRING"
+                },
+                "updatedBalance": {
+                    "allowNull": true,
+                    "field": "updatedBalance",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "userId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "userId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "users": {
+            "tableName": "users",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "firstName": {
+                    "allowNull": false,
+                    "field": "firstName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "lastName": {
+                    "allowNull": false,
+                    "field": "lastName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "phoneNumber": {
+                    "allowNull": false,
+                    "field": "phoneNumber",
+                    "seqType": "Sequelize.STRING"
+                },
+                "password": {
+                    "allowNull": false,
+                    "field": "password",
+                    "seqType": "Sequelize.STRING"
+                },
+                "email": {
+                    "allowNull": false,
+                    "unique": true,
+                    "field": "email",
+                    "seqType": "Sequelize.STRING"
+                },
+                "role": {
+                    "allowNull": true,
+                    "field": "role",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}
